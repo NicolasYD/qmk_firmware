@@ -17,9 +17,9 @@ static uint16_t space_down_timer = 0;
 
 static uint16_t space_interval = 120;
 #define SPACE_HOLD_TIME 50
-#define SPACE_INTERVAL_MIN 95
-#define SPACE_INTERVAL_MAX 145
-#define SPACE_INTERVAL_STEP 5
+#define SPACE_INTERVAL_MIN 90
+#define SPACE_INTERVAL_MAX 150
+#define SPACE_INTERVAL_STEP 10
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
