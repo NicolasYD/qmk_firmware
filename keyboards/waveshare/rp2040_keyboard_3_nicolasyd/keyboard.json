@@ -18,6 +18,14 @@
     },
     "rgb_matrix": {
         "driver": "ws2812",
+        "default": {
+            // Sets the default mode, if none has been set
+            "animation": "solid_reactive",
+            // Sets the default hue value, if none has been set
+            "hue": 201,
+            // Sets the default brightness value, if none has been set
+            "val": 10
+        },
         "animations": {
             "gradient_left_right": true,
             "breathing": true,
