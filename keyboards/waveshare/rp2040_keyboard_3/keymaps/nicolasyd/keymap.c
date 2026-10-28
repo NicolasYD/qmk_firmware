@@ -15,11 +15,11 @@ static uint16_t space_repeat_timer = 0;
 static bool space_is_down = false;
 static uint16_t space_down_timer = 0;
 
-static uint16_t space_interval = 100;
-#define SPACE_HOLD_TIME 20
-#define SPACE_INTERVAL_MIN 40
-#define SPACE_INTERVAL_MAX 200
-#define SPACE_INTERVAL_STEP 20
+static uint16_t space_interval = 120;
+#define SPACE_HOLD_TIME 50
+#define SPACE_INTERVAL_MIN 95
+#define SPACE_INTERVAL_MAX 145
+#define SPACE_INTERVAL_STEP 5
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
