@@ -22,9 +22,9 @@
             // Sets the default mode, if none has been set
             "animation": "solid_reactive",
             // Sets the default hue value, if none has been set
-            "hue": 201,
+            "hue": 169,
             // Sets the default brightness value, if none has been set
-            "val": 10
+            "val": 100
         },
         "animations": {
             "gradient_left_right": true,

@@ -15,11 +15,13 @@ static uint16_t space_repeat_timer = 0;
 static bool space_is_down = false;
 static uint16_t space_down_timer = 0;
 
-static uint16_t space_interval = 120;
-#define SPACE_HOLD_TIME 50
-#define SPACE_INTERVAL_MIN 90
-#define SPACE_INTERVAL_MAX 150
+#define SPACE_HOLD_TIME 15
+#define SPACE_INTERVAL_DEFAULT 60
+#define SPACE_INTERVAL_MIN 30
+#define SPACE_INTERVAL_MAX 130
 #define SPACE_INTERVAL_STEP 10
+
+static uint16_t space_interval = SPACE_INTERVAL_DEFAULT;
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
@@ -70,6 +72,16 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 }
 
 void matrix_scan_user(void) {
+    if (space_interval == SPACE_INTERVAL_DEFAULT) {
+        rgblight_sethsv_noeeprom(21, rgblight_get_sat(), rgblight_get_val());
+    } else if (space_interval == SPACE_INTERVAL_MIN) {
+        rgblight_sethsv_noeeprom(0, rgblight_get_sat(), rgblight_get_val());
+    } else if (space_interval == SPACE_INTERVAL_MAX) {
+        rgblight_sethsv_noeeprom(85, rgblight_get_sat(), rgblight_get_val());
+    } else {
+        rgblight_sethsv_noeeprom(169, rgblight_get_sat(), rgblight_get_val());
+    }
+
     if (!space_repeat_active) {
         return;
     }
